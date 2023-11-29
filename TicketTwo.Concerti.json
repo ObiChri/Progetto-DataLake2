@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e2e"
+  },
+  "nome": "Nome del concerto",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Artista 1",
+      "genere": "Genere musicale dell'artista 1"
+    },
+    {
+      "nome": "Artista 2",
+      "genere": "Genere musicale dell'artista 2"
+    }
+  ],
+  "data": {
+    "$date": "2023-12-15T20:00:00.000Z"
+  },
+  "citta": "Città",
+  "luogo": "Luogo del concerto",
+  "biglietti": {
+    "prezzo": 100,
+    "disponibili": [
+      50
+    ]
+  }
+}]
