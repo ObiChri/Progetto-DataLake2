@@ -1,0 +1,292 @@
+[{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e2e"
+  },
+  "nome": "MIAMI",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "I cani",
+      "genere": "Indie pop"
+    },
+    {
+      "nome": "Mobrici",
+      "genere": "Indie pop"
+    },
+    {
+      "nome": "Giorgio Poi",
+      "genere": "Indie pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-25T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Circolo Magnolia",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 50
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 300
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656df84a21bd2dc50791302b"
+  },
+  "nome": "MIAMI",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Fulminacci",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Zero Assoluto",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Massimo Pericolo",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-26T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Circolo Magnolia",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 50
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 300
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656df95a21bd2dc50791302c"
+  },
+  "nome": "MIAMI",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Tre Allegri Ragazzi Morti",
+      "genere": "Indie pop"
+    },
+    {
+      "nome": "Cosmo",
+      "genere": "Alternativa"
+    },
+    {
+      "nome": "PoetrySlamming",
+      "genere": "Poesia"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-27T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Circolo Magnolia",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 50
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 300
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656dfa2221bd2dc50791302d"
+  },
+  "nome": "Jova Beach Party",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Jovanotti",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-13T18:00:00.000Z"
+  },
+  "citta": "Riccione",
+  "luogo": "Lido di Riccione",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 1000,
+      "disponibili": 200
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 80,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656dfab421bd2dc50791302e"
+  },
+  "nome": "The Eras Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Taylor Swift",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-13T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 1000,
+      "disponibili": 50
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656dfb7b21bd2dc50791302f"
+  },
+  "nome": "Elements Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Ed Sheeran",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-24T21:00:00.000Z"
+  },
+  "citta": "Roma",
+  "luogo": "Stadio Olimpico",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      12.457392692565918,
+      41.89020994866327
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656e004a21bd2dc507913030"
+  },
+  "nome": "iDays Coca-Cola Summer Festiva",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "The Black Keys",
+      "genere": "Alternative"
+    },
+    {
+      "nome": "Liam Gallagher",
+      "genere": "Rock"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-26T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Ippodrom SNAI La Maura",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 150
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 3000
+    }
+  ]
+}]
