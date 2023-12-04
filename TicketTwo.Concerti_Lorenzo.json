@@ -1,0 +1,546 @@
+[{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e30"
+  },
+  "nome": "Electronic Vibes",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "DJ Harmony",
+      "genere": "Electronic"
+    },
+    {
+      "nome": "Synth Wave Masters",
+      "genere": "Synthwave"
+    }
+  ],
+  "data": "2024-03-08T21:00:00.000Z",
+  "citta": "Roma",
+  "luogo": "Club Electra",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      12.495210647583,
+      41.902783499664
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 90,
+      "disponibili": 40
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 200
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e31"
+  },
+  "nome": "Country Harmony",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Nashville Dreams",
+      "genere": "Country"
+    },
+    {
+      "nome": "Bluegrass Heroes",
+      "genere": "Bluegrass"
+    }
+  ],
+  "data": "2024-05-15T18:45:00.000Z",
+  "citta": "Firenze",
+  "luogo": "Country Hall",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.255813598633,
+      43.769560206637
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 80,
+      "disponibili": 25
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 55,
+      "disponibili": 180
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e32"
+  },
+  "nome": "Jazz Fusion Night",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Smooth Jazz Quartet",
+      "genere": "Smooth Jazz"
+    },
+    {
+      "nome": "Funky Groove Ensemble",
+      "genere": "Funk Jazz"
+    }
+  ],
+  "data": "2024-07-02T20:15:00.000Z",
+  "citta": "Napoli",
+  "luogo": "Jazz Lounge",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      14.268110275269,
+      40.852016137262
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 110,
+      "disponibili": 35
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 220
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e33"
+  },
+  "nome": "Indie Acoustic Showcase",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Whispering Acoustics",
+      "genere": "Indie Folk"
+    },
+    {
+      "nome": "Melodic Echoes",
+      "genere": "Acoustic Pop"
+    }
+  ],
+  "data": "2024-09-18T19:00:00.000Z",
+  "citta": "Bologna",
+  "luogo": "Indie Park",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.341721534729,
+      44.494887947932
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 95,
+      "disponibili": 45
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 55,
+      "disponibili": 180
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e34"
+  },
+  "nome": "Hip-Hop Explosion",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Urban Rhymes Crew",
+      "genere": "Hip-Hop"
+    },
+    {
+      "nome": "Beat Masters",
+      "genere": "Beatbox"
+    }
+  ],
+  "data": "2024-11-10T22:30:00.000Z",
+  "citta": "Torino",
+  "luogo": "Hip-Hop Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      7.686856269836,
+      45.070339554661
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 85,
+      "disponibili": 30
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e35"
+  },
+  "nome": "Classical Masters",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Symphony Orchestra",
+      "genere": "Classical"
+    },
+    {
+      "nome": "Piano Virtuoso",
+      "genere": "Classical"
+    }
+  ],
+  "data": "2024-02-14T19:30:00.000Z",
+  "citta": "Verona",
+  "luogo": "Grand Opera House",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      10.996165275574,
+      45.438384766762
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 150,
+      "disponibili": 20
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 80,
+      "disponibili": 150
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e36"
+  },
+  "nome": "Reggae Roots Festival",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Roots Reggae Collective",
+      "genere": "Reggae"
+    },
+    {
+      "nome": "Dub Rhythms",
+      "genere": "Dub"
+    }
+  ],
+  "data": "2024-06-30T20:45:00.000Z",
+  "citta": "Palermo",
+  "luogo": "Reggae Park",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      13.3615193367,
+      38.1156882591
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 90,
+      "disponibili": 25
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 55,
+      "disponibili": 200
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e37"
+  },
+  "nome": "Pop Extravaganza",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Pop Sensations",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Dance Party Crew",
+      "genere": "Dance Pop"
+    }
+  ],
+  "data": "2024-10-22T18:30:00.000Z",
+  "citta": "Genova",
+  "luogo": "Pop Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      8.946256637573,
+      44.407062651224
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 120,
+      "disponibili": 30
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 70,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e38"
+  },
+  "nome": "Blues Night",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Soulful Blues Band",
+      "genere": "Blues"
+    },
+    {
+      "nome": "Slide Guitar Maestro",
+      "genere": "Blues Rock"
+    }
+  ],
+  "data": "2024-04-05T21:15:00.000Z",
+  "citta": "Catania",
+  "luogo": "Blues Lounge",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      15.087267875671,
+      37.502482303112
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 95,
+      "disponibili": 40
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 180
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e39"
+  },
+  "nome": "R&B Groove Fest",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Soulful Harmony",
+      "genere": "R&B"
+    },
+    {
+      "nome": "Groove Evolution",
+      "genere": "Funk"
+    }
+  ],
+  "data": "2024-08-12T20:30:00.000Z",
+  "citta": "Turin",
+  "luogo": "R&B Park",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      7.688398838043,
+      45.070312702623
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 110,
+      "disponibili": 30
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 220
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e3a"
+  },
+  "nome": "Metal Mayhem",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Thunderous Metallica",
+      "genere": "Heavy Metal"
+    },
+    {
+      "nome": "Thrash Titans",
+      "genere": "Thrash Metal"
+    }
+  ],
+  "data": "2024-02-28T22:00:00.000Z",
+  "citta": "Bari",
+  "luogo": "Metal Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      16.856517791748,
+      41.128086803509
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 130,
+      "disponibili": 25
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 75,
+      "disponibili": 200
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e3b"
+  },
+  "nome": "Latin Fiesta",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Salsa Sensation",
+      "genere": "Salsa"
+    },
+    {
+      "nome": "Latin Rhythms Orchestra",
+      "genere": "Latin Jazz"
+    }
+  ],
+  "data": "2024-06-15T19:45:00.000Z",
+  "citta": "Naples",
+  "luogo": "Latin Square",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      14.250134468079,
+      40.853637215323
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 35
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 180
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e3c"
+  },
+  "nome": "EDM Sensation",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Electro Beats DJ",
+      "genere": "EDM"
+    },
+    {
+      "nome": "Techno Groove Master",
+      "genere": "Techno"
+    }
+  ],
+  "data": "2024-12-03T22:30:00.000Z",
+  "citta": "Florence",
+  "luogo": "EDM Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.255898475647,
+      43.773336662345
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 90,
+      "disponibili": 30
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e3d"
+  },
+  "nome": "Guitar Virtuoso Showcase",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Acoustic Virtuoso",
+      "genere": "Acoustic"
+    },
+    {
+      "nome": "Shredding Maestro",
+      "genere": "Shred Metal"
+    }
+  ],
+  "data": "2024-09-08T20:15:00.000Z",
+  "citta": "Genoa",
+  "luogo": "Guitar Hall",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      8.934425354004,
+      44.407062651224
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 25
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 55,
+      "disponibili": 200
+    }
+  ]
+}]
