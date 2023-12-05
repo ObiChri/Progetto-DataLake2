@@ -269,7 +269,7 @@
     "$date": "2024-07-26T20:00:00.000Z"
   },
   "citta": "Milano",
-  "luogo": "Ippodrom SNAI La Maura",
+  "luogo": "Ippodromo SNAI La Maura",
   "posizione": {
     "type": "Point",
     "coordinates": [
@@ -287,6 +287,301 @@
       "tipo": "standard",
       "prezzo": 60,
       "disponibili": 3000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656ee13c49401081a90b96fc"
+  },
+  "nome": "The Eras Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Taylor Swift",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-14T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 1000,
+      "disponibili": 50
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656ee16a49401081a90b96fd"
+  },
+  "nome": "Jova negli stadi",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Jovanotti",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-08T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 550,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 90,
+      "disponibili": 6000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656ee4cd49401081a90b9701"
+  },
+  "nome": "iDays Coca-Cola Summer Festiva",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Arctic Monkeys",
+      "genere": "Rock"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-29T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Ippodromo SNAI La Maura",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 150
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 3000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656eecb349401081a90b9703"
+  },
+  "nome": "Jazz trio - Live",
+  "categoria": "Musica dal vivo",
+  "artisti": [
+    {
+      "nome": "I jazzisti",
+      "genere": "Jazz"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-03T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Teatro Mazzacorati",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656eed9049401081a90b9704"
+  },
+  "nome": "Concerto di Natale",
+  "categoria": "Musica dal vivo",
+  "artisti": [
+    {
+      "nome": "Coro dell'Emilia Romagna",
+      "genere": "Musica corale"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-20T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Teatro Mazzacorati",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656ef98649401081a90b9705"
+  },
+  "nome": "No Stress Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Rkomi",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Irama",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-10T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Unipol Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 58,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656efd7549401081a90b9706"
+  },
+  "nome": "La Divina Commedia Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Tedua",
+      "genere": "Trap"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-10T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Unipol Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 58,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656efe1d49401081a90b9707"
+  },
+  "nome": "Tour nei Tropici",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Tropico",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-16T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Unipol Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 58,
+      "disponibili": 2000
     }
   ]
 }]
