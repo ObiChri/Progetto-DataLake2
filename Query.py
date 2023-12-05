@@ -1,6 +1,8 @@
 from pymongo import MongoClient
 from datetime import datetime
 from geopy.distance import geodesic
+from geopy.geocoders import Nominatim
+import time
 
 
 # Funzione per connettersi al database TicketTwo e alla collezione Concerti
@@ -129,44 +131,6 @@ def find_concerts_by_date_interval(start_date, end_date, collection):
         print("Errore durante la ricerca per intervallo di date:", str(e))
 
 
-# Ricerca per vicinanza geografica
-def find_concerts_by_location(latitude, longitude, radius, collection):
-    try:
-        # Coordiante del luogo dell'utente
-        user_location = (latitude, longitude)
-
-        # Query per trovare i concerti entro il raggio specificato
-        all_concerts = collection.find({})  # Ottieni tutti i concerti
-
-        concerts_within_radius = []
-        for concert in all_concerts:
-            # Coordiante del luogo del concerto
-            concert_location = (concert['posizione']['coordinates'][1], concert['posizione']['coordinates'][0])
-
-            # Calcola la distanza tra il luogo dell'utente e il luogo del concerto
-            distance = geodesic(user_location, concert_location).kilometers
-
-            # Aggiungi il concerto alla lista se è entro il raggio specificato
-            if distance <= radius:
-                concerts_within_radius.append(concert)
-
-        num_concerts = len(concerts_within_radius)
-        if num_concerts > 0:
-            print(f"Concerti trovati entro {radius} km dal luogo specificato: {num_concerts}")
-            # Visualizza o elabora i risultati come desiderato
-            for concert in concerts_within_radius:
-                # Mostra i dettagli del concerto
-                print(f"Nome: {concert['nome']}, Data: {concert['data']}, Altro: ...")
-
-        else:
-            print(f"Nessun concerto trovato entro {radius} km dal luogo specificato")
-    except Exception as e:
-        print("Errore durante la ricerca dei concerti per vicinanza:", str(e))
-
-
-from bson import ObjectId
-
-
 def buy_tickets(concert, collection):
     try:
         tickets = concert['biglietti']
@@ -207,6 +171,64 @@ def buy_tickets(concert, collection):
         print("Errore durante l'acquisto dei biglietti:", str(e))
 
 
+def find_concerts_by_address(address, radius, collection):
+    try:
+        # Inizializza il geolocalizzatore
+        geolocator = Nominatim(user_agent="concert_finder", timeout= 10)
+
+        # Ottieni le coordinate geografiche dell'indirizzo specificato
+        location = geolocator.geocode(address)
+
+        if location is None:
+            print("Indirizzo non trovato.")
+            return
+
+        user_coordinates = (location.latitude, location.longitude)
+
+        # Trova tutti i concerti dal database
+        all_concerts = list(collection.find())
+
+        time.sleep(1)
+
+        # Filtra i concerti entro 7 km dall'indirizzo specificato
+        nearby_concerts = []
+        for concert in all_concerts:
+            concert_location = geolocator.geocode(concert['luogo'])
+            if concert_location is None:
+                continue
+
+            concert_coordinates = (concert_location.latitude, concert_location.longitude)
+
+            # Calcola la distanza tra l'indirizzo utente e il concerto
+            distance = geodesic(user_coordinates, concert_coordinates).kilometers
+
+            # Se il concerto è entro il raggio specificato, aggiungilo alla lista dei concerti vicini
+            if distance <= 7:
+                nearby_concerts.append(concert)
+
+        num_nearby_concerts = len(nearby_concerts)
+        if num_nearby_concerts > 0:
+            print(f"Concerti trovati entro 7 km da '{address}': {num_nearby_concerts}")
+            for i, concert in enumerate(nearby_concerts, start=1):
+                print(f"\nConcerto {i}:")
+                print(f"Nome: {concert['nome']}")
+                print(f"Data: {concert['data'].strftime('%d-%m-%Y')}")
+                print(f"Luogo: {concert['luogo']}")
+                for ticket in concert['biglietti']:
+                    ticket_type = ticket['tipo'].capitalize()
+                    price = ticket['prezzo']
+                    availability = ticket['disponibili']
+                    print(f"{ticket_type}: Prezzo: {price}€, Disponibili: {availability}")
+
+            choice = int(input(f"Scegli il concerto da acquistare (1-{num_nearby_concerts}): "))
+            selected_concert = nearby_concerts[choice - 1]  # Indice inizia da 0
+            buy_tickets(selected_concert, collection)
+        else:
+            print(f"Nessun concerto trovato entro 7 km da '{address}'.")
+    except Exception as e:
+        print("Errore durante la ricerca per indirizzo:", str(e))
+
+
 def main():
     # Connessione al database e alla collezione
     collection = connect_to_mongodb()
@@ -240,12 +262,11 @@ def main():
             # Trova i concerti nell'intervallo di date
             find_concerts_by_date_interval(start_date, end_date, collection)
         elif user_choice == '4':
-            # Input per la vicinanza geografica
-            latitude = float(input("Inserisci la latitudine del tuo luogo: "))
-            longitude = float(input("Inserisci la longitudine del tuo luogo: "))
-            radius = float(input("Inserisci il raggio di ricerca in chilometri: "))
-            # Trova i concerti entro la vicinanza geografica
-            find_concerts_by_location(latitude, longitude, radius, collection)
+            # Input per l'indirizzo
+            address = input("Inserisci l'indirizzo (via, città): ")
+            radius = 7  # Raggio di 7 km
+            # Trova i concerti entro il raggio di 7 km dall'indirizzo specificato
+            find_concerts_by_address(address, radius, collection)
         else:
             print("Opzione non valida. Si prega di selezionare un'opzione da 1 a 4.")
 
