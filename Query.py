@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from datetime import datetime
+from geopy.distance import geodesic
 
 
 # Funzione per connettersi al database TicketTwo e alla collezione Concerti
@@ -103,6 +104,89 @@ def find_concerts_by_name(concert_name, collection):
         return []
 
 
+from datetime import datetime
+
+
+# Funzione per trovare i concerti nell'intervallo di date specificato
+def find_concerts_by_date_interval(start_date, end_date, collection):
+    try:
+        # Converti le stringhe in oggetti datetime
+        start_date = datetime.strptime(start_date, '%Y-%m-%d')
+        end_date = datetime.strptime(end_date, '%Y-%m-%d')
+
+        # Query per trovare i concerti nell'intervallo di date
+        query = {
+            "data": {
+                "$gte": start_date,
+                "$lte": end_date
+            }
+        }
+
+        # Esegui la query nella collezione Concerti
+        results = collection.find(query)
+
+        # Stampa i risultati trovati
+        concerts = list(results)
+        num_concerts = len(concerts)
+
+        if num_concerts > 0:
+            print(
+                f"Concerti trovati nell'intervallo di date ({start_date.strftime('%d-%m-%Y')} - {end_date.strftime('%d-%m-%Y')}):")
+            for i, concert in enumerate(concerts, start=1):
+                print(f"\nConcerto {i}:")
+                print(f"Nome: {concert['nome']}")
+                print(f"Data: {concert['data'].strftime('%d-%m-%Y')}")
+                for ticket in concert['biglietti']:
+                    ticket_type = ticket['tipo'].capitalize()
+                    price = ticket['prezzo']
+                    availability = ticket['disponibili']
+                    print(f"{ticket_type}: Prezzo: {price}€, Disponibili: {availability}")
+
+            # Chiedi all'utente di selezionare un concerto
+            choice = int(input(f"Scegli il concerto da acquistare (1-{num_concerts}): "))
+            selected_concert = concerts[choice - 1]  # Indice inizia da 0
+            buy_tickets(selected_concert, collection)
+        else:
+            print("Nessun concerto trovato nell'intervallo di date specificato")
+    except Exception as e:
+        print("Errore durante la ricerca per intervallo di date:", str(e))
+
+
+# Ricerca per vicinanza geografica
+def find_concerts_by_location(latitude, longitude, radius, collection):
+    try:
+        # Coordiante del luogo dell'utente
+        user_location = (latitude, longitude)
+
+        # Query per trovare i concerti entro il raggio specificato
+        all_concerts = collection.find({})  # Ottieni tutti i concerti
+
+        concerts_within_radius = []
+        for concert in all_concerts:
+            # Coordiante del luogo del concerto
+            concert_location = (concert['posizione']['coordinates'][1], concert['posizione']['coordinates'][0])
+
+            # Calcola la distanza tra il luogo dell'utente e il luogo del concerto
+            distance = geodesic(user_location, concert_location).kilometers
+
+            # Aggiungi il concerto alla lista se è entro il raggio specificato
+            if distance <= radius:
+                concerts_within_radius.append(concert)
+
+        num_concerts = len(concerts_within_radius)
+        if num_concerts > 0:
+            print(f"Concerti trovati entro {radius} km dal luogo specificato: {num_concerts}")
+            # Visualizza o elabora i risultati come desiderato
+            for concert in concerts_within_radius:
+                # Mostra i dettagli del concerto
+                print(f"Nome: {concert['nome']}, Data: {concert['data']}, Altro: ...")
+
+        else:
+            print(f"Nessun concerto trovato entro {radius} km dal luogo specificato")
+    except Exception as e:
+        print("Errore durante la ricerca dei concerti per vicinanza:", str(e))
+
+
 # Funzione per acquistare i biglietti per un concerto
 def buy_tickets(concert, collection):
     try:
@@ -151,6 +235,8 @@ def main():
         print("Seleziona l'opzione di ricerca:")
         print("1. Cerca per nome dell'artista")
         print("2. Cerca per nome del concerto")
+        print("3. Cerca per intervallo di date")
+        print("4. Cerca per vicinanza geografica")
 
         user_choice = input("Inserisci il numero corrispondente all'opzione desiderata: ")
 
@@ -163,29 +249,24 @@ def main():
             # Input del nome concerto
             concert_name = input("Inserisci il nome del concerto da cercare: ")
             # Trova i concerti per nome
-            concerts = find_concerts_by_name(concert_name, collection)
-            if concerts:
-                # Se vengono trovati concerti con quel nome, permette di selezionare e acquistare i biglietti
-                num_concerts = len(concerts)
-                print(f"\nScegli il concerto da acquistare (1-{num_concerts}):")
-                for i, concert in enumerate(concerts, start=1):
-                    print(f"{i}. Nome: {concert['nome']}, Data: {concert['data'].strftime('%d/%m/%y')}")
-
-                while True:
-                    try:
-                        choice = int(input("Inserisci il numero corrispondente al concerto da acquistare: "))
-                        if 1 <= choice <= num_concerts:
-                            buy_tickets(concerts[choice - 1],
-                                        collection)  # Acquista biglietti per il concerto selezionato
-                            break
-                        else:
-                            print("Inserisci un numero valido.")
-                    except ValueError:
-                        print("Inserisci un numero valido.")
-            else:
-                print("Nessun concerto trovato con il nome specificato.")
+            concert = find_concerts_by_name(concert_name, collection)
+            if concert:
+                buy_tickets(concert, collection)
+        elif user_choice == '3':
+            # Input per l'intervallo di date
+            start_date = input("Inserisci la data di inizio (YYYY-MM-DD): ")
+            end_date = input("Inserisci la data di fine (YYYY-MM-DD): ")
+            # Trova i concerti nell'intervallo di date
+            find_concerts_by_date_interval(start_date, end_date, collection)
+        elif user_choice == '4':
+            # Input per la vicinanza geografica
+            latitude = float(input("Inserisci la latitudine del tuo luogo: "))
+            longitude = float(input("Inserisci la longitudine del tuo luogo: "))
+            radius = float(input("Inserisci il raggio di ricerca in chilometri: "))
+            # Trova i concerti entro la vicinanza geografica
+            find_concerts_by_location(latitude, longitude, radius, collection)
         else:
-            print("Opzione non valida. Si prega di selezionare 1 o 2.")
+            print("Opzione non valida. Si prega di selezionare un'opzione da 1 a 4.")
 
 
 if __name__ == "__main__":
