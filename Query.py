@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from datetime import datetime
 
 
 # Funzione per connettersi al database TicketTwo e alla collezione Concerti
@@ -32,21 +33,24 @@ def find_concerts_by_artist(artist_name, collection):
         num_concerts = len(concerts)
 
         if num_concerts > 0:
-            print(f"Concerti trovati: {num_concerts}")
+            print(f"Concerti trovati per l'artista '{artist_name}': {num_concerts}")
             for i, concert in enumerate(concerts, start=1):
-                tickets = concert['biglietti']  # Accesso alla lista di biglietti
+                concert_name = concert['nome']
+                concert_date = concert['data']
+                tickets = concert['biglietti']
 
                 print(f"\nConcerto {i}:")
+                print(f"Nome: {concert_name}")
+                print(f"Data: {concert_date.strftime('%d/%m/%y')}")
+
+                # Mostra la disponibilità dei biglietti
                 for ticket in tickets:
                     ticket_type = ticket['tipo']
-                    availability = ticket['disponibili']
+                    available_tickets = ticket['disponibili']
                     price = ticket['prezzo']
-                    if availability == 0:
-                        availability = 'sold-out'
+                    print(f"{ticket_type.capitalize()}: Prezzo: {price}€, Disponibili: {available_tickets}")
 
-                    print(f"{ticket_type.capitalize()}: Disp: {availability}, Prezzo: {price}€")
-
-                # Chiedi all'utente di selezionare il tipo di biglietto da acquistare
+                # Chiedi all'utente se desidera acquistare un biglietto per questo concerto
                 ticket_choice = input(
                     f"Vuoi acquistare un biglietto (VIP/Standard) per questo concerto (sì/no)? ").lower()
                 if ticket_choice == 'sì' or ticket_choice == 'si':
@@ -59,41 +63,44 @@ def find_concerts_by_artist(artist_name, collection):
     except Exception as e:
         print("Errore durante la ricerca dei concerti dell'artista:", str(e))
 
-# Funzione per trovare un concerto per nome
-def find_concert_by_name(concert_name, collection):
+
+# Funzione per trovare i concerti per nome
+def find_concerts_by_name(concert_name, collection):
     try:
-        # Query per trovare il concerto basato sul nome
+        # Query per trovare i concerti basati sul nome
         query = {"nome": concert_name}
 
         # Esegui la query nella collezione Concerti
-        result = collection.find_one(query)
+        results = collection.find(query)
 
-        # Stampa il risultato trovato in un formato simile a find_concerts_by_artist
-        if result:
-            print(f"Concerti trovati: 1")
+        concerts = list(results)
+        num_concerts = len(concerts)
 
-            tickets = result['biglietti']  # Accesso alla lista di biglietti
-            print("\nConcerto 1:")
-            for ticket in tickets:
-                ticket_type = ticket['tipo']
-                availability = ticket['disponibili']
-                price = ticket['prezzo']
-                if availability == 0:
-                    availability = 'sold-out'
+        if num_concerts > 0:
+            print(f"Concerti trovati: {num_concerts}")
+            for i, concert in enumerate(concerts, start=1):
+                concert_name = concert['nome']
+                concert_date = concert['data']
+                tickets = concert['biglietti']
 
-                print(f"{ticket_type.capitalize()}: Disp: {availability}, Prezzo: {price}€")
+                print(f"\nConcerto {i}:")
+                print(f"Nome: {concert_name}")
+                print(f"Data: {concert_date.strftime('%d/%m/%y')}")
 
-            # Chiedi all'utente di selezionare il tipo di biglietto da acquistare
-            ticket_choice = input(
-                f"Vuoi acquistare un biglietto (VIP/Standard) per questo concerto (sì/no)? ").lower()
-            if ticket_choice == 'sì' or ticket_choice == 'si':
-                buy_tickets(result, collection)
-            else:
-                print("Operazione annullata.")
+                # Mostra la disponibilità dei biglietti
+                for ticket in tickets:
+                    ticket_type = ticket['tipo']
+                    available_tickets = ticket['disponibili']
+                    price = ticket['prezzo']
+                    print(f"{ticket_type.capitalize()}: Prezzo: {price}€, Disponibili: {available_tickets}")
+
+            return concerts  # Restituisce la lista dei concerti trovati
         else:
             print(f"Nessun concerto trovato con il nome '{concert_name}'")
+            return []
     except Exception as e:
-        print("Errore durante la ricerca del concerto per nome:", str(e))
+        print("Errore durante la ricerca dei concerti per nome:", str(e))
+        return []
 
 
 # Funzione per acquistare i biglietti per un concerto
@@ -115,13 +122,17 @@ def buy_tickets(concert, collection):
                     f"Quanti biglietti {ticket_type.capitalize()} vuoi acquistare? (Disponibili: {availability}): "))
 
                 if tickets_to_buy > 0 and tickets_to_buy <= availability:
+                    total_price = price * tickets_to_buy
                     updated_availability = availability - tickets_to_buy
-                    collection.update_one({"_id": concert["_id"]},
-                                          {"$set": {"biglietti.$[elem].disponibili": updated_availability}},
-                                          array_filters=[{"elem.tipo": ticket_type}])
+                    collection.update_one(
+                        {"_id": concert["_id"],
+                         "biglietti": {"$elemMatch": {"tipo": ticket_type, "disponibili": {"$gte": tickets_to_buy}}}},
+                        {"$inc": {"biglietti.$.disponibili": -tickets_to_buy}}
+                    )
 
                     print(
                         f"Hai acquistato {tickets_to_buy} biglietti {ticket_type.capitalize()} per il concerto '{concert['nome']}'")
+                    print(f"Costo totale: {total_price}€")
                     print(f"Disponibilità rimasta: {updated_availability}")
                 else:
                     print("Quantità non valida o biglietti esauriti.")
@@ -152,9 +163,27 @@ def main():
             # Input del nome concerto
             concert_name = input("Inserisci il nome del concerto da cercare: ")
             # Trova i concerti per nome
-            concert = find_concert_by_name(concert_name, collection)
-            if concert:
-                buy_tickets(concert, collection)
+            concerts = find_concerts_by_name(concert_name, collection)
+            if concerts:
+                # Se vengono trovati concerti con quel nome, permette di selezionare e acquistare i biglietti
+                num_concerts = len(concerts)
+                print(f"\nScegli il concerto da acquistare (1-{num_concerts}):")
+                for i, concert in enumerate(concerts, start=1):
+                    print(f"{i}. Nome: {concert['nome']}, Data: {concert['data'].strftime('%d/%m/%y')}")
+
+                while True:
+                    try:
+                        choice = int(input("Inserisci il numero corrispondente al concerto da acquistare: "))
+                        if 1 <= choice <= num_concerts:
+                            buy_tickets(concerts[choice - 1],
+                                        collection)  # Acquista biglietti per il concerto selezionato
+                            break
+                        else:
+                            print("Inserisci un numero valido.")
+                    except ValueError:
+                        print("Inserisci un numero valido.")
+            else:
+                print("Nessun concerto trovato con il nome specificato.")
         else:
             print("Opzione non valida. Si prega di selezionare 1 o 2.")
 
