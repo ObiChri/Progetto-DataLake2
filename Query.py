@@ -68,17 +68,32 @@ def find_concert_by_name(concert_name, collection):
         # Esegui la query nella collezione Concerti
         result = collection.find_one(query)
 
-        # Stampa il risultato trovato
+        # Stampa il risultato trovato in un formato simile a find_concerts_by_artist
         if result:
-            print("Dettagli del concerto:")
-            print(result)
-            return result
+            print(f"Concerti trovati: 1")
+
+            tickets = result['biglietti']  # Accesso alla lista di biglietti
+            print("\nConcerto 1:")
+            for ticket in tickets:
+                ticket_type = ticket['tipo']
+                availability = ticket['disponibili']
+                price = ticket['prezzo']
+                if availability == 0:
+                    availability = 'sold-out'
+
+                print(f"{ticket_type.capitalize()}: Disp: {availability}, Prezzo: {price}€")
+
+            # Chiedi all'utente di selezionare il tipo di biglietto da acquistare
+            ticket_choice = input(
+                f"Vuoi acquistare un biglietto (VIP/Standard) per questo concerto (sì/no)? ").lower()
+            if ticket_choice == 'sì' or ticket_choice == 'si':
+                buy_tickets(result, collection)
+            else:
+                print("Operazione annullata.")
         else:
             print(f"Nessun concerto trovato con il nome '{concert_name}'")
-            return None
     except Exception as e:
         print("Errore durante la ricerca del concerto per nome:", str(e))
-
 
 
 # Funzione per acquistare i biglietti per un concerto
