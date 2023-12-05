@@ -38,11 +38,13 @@ def find_concerts_by_artist(artist_name, collection):
             for i, concert in enumerate(concerts, start=1):
                 concert_name = concert['nome']
                 concert_date = concert['data']
+                concert_place = concert['luogo']
                 tickets = concert['biglietti']
 
                 print(f"\nConcerto {i}:")
                 print(f"Nome: {concert_name}")
                 print(f"Data: {concert_date.strftime('%d/%m/%y')}")
+                print(f"Luogo: {concert_place}")
 
                 # Mostra la disponibilità dei biglietti
                 for ticket in tickets:
@@ -65,13 +67,10 @@ def find_concerts_by_artist(artist_name, collection):
         print("Errore durante la ricerca dei concerti dell'artista:", str(e))
 
 
-# Funzione per trovare i concerti per nome
-def find_concerts_by_name(concert_name, collection):
+# Funzione per trovare i concerti per nome del concerto
+def find_concerts_by_name(name, collection):
     try:
-        # Query per trovare i concerti basati sul nome
-        query = {"nome": concert_name}
-
-        # Esegui la query nella collezione Concerti
+        query = {"nome": {"$regex": name, "$options": "i"}}
         results = collection.find(query)
 
         concerts = list(results)
@@ -80,31 +79,23 @@ def find_concerts_by_name(concert_name, collection):
         if num_concerts > 0:
             print(f"Concerti trovati: {num_concerts}")
             for i, concert in enumerate(concerts, start=1):
-                concert_name = concert['nome']
-                concert_date = concert['data']
-                tickets = concert['biglietti']
-
                 print(f"\nConcerto {i}:")
-                print(f"Nome: {concert_name}")
-                print(f"Data: {concert_date.strftime('%d/%m/%y')}")
-
-                # Mostra la disponibilità dei biglietti
-                for ticket in tickets:
-                    ticket_type = ticket['tipo']
-                    available_tickets = ticket['disponibili']
+                print(f"Nome: {concert['nome']}")
+                print(f"Data: {concert['data'].strftime('%d-%m-%Y')}")
+                print(f"Luogo: {concert['luogo']}")
+                for ticket in concert['biglietti']:
+                    ticket_type = ticket['tipo'].capitalize()
                     price = ticket['prezzo']
-                    print(f"{ticket_type.capitalize()}: Prezzo: {price}€, Disponibili: {available_tickets}")
+                    availability = ticket['disponibili']
+                    print(f"{ticket_type}: Prezzo: {price}€, Disponibili: {availability}")
 
-            return concerts  # Restituisce la lista dei concerti trovati
+            choice = int(input(f"Scegli il concerto di cui acquistare il biglietto (1-{num_concerts}): "))
+            selected_concert = concerts[choice - 1]  # Indice inizia da 0
+            buy_tickets(selected_concert, collection)
         else:
-            print(f"Nessun concerto trovato con il nome '{concert_name}'")
-            return []
+            print("Nessun concerto trovato.")
     except Exception as e:
-        print("Errore durante la ricerca dei concerti per nome:", str(e))
-        return []
-
-
-from datetime import datetime
+        print("Errore durante la ricerca per nome del concerto:", str(e))
 
 
 # Funzione per trovare i concerti nell'intervallo di date specificato
@@ -136,6 +127,7 @@ def find_concerts_by_date_interval(start_date, end_date, collection):
                 print(f"\nConcerto {i}:")
                 print(f"Nome: {concert['nome']}")
                 print(f"Data: {concert['data'].strftime('%d-%m-%Y')}")
+                print(f"Luogo: {concert['luogo']}")
                 for ticket in concert['biglietti']:
                     ticket_type = ticket['tipo'].capitalize()
                     price = ticket['prezzo']
