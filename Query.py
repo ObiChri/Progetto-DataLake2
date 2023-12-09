@@ -21,7 +21,6 @@ def connessione_mongo():
         print("Errore durante la connessione a MongoDB:", str(e))
         return None
 
-
 # Funzione per trovare i concerti per nome dell'artista
 def concerto_per_artista(artista, raccolta):
     try:
@@ -52,7 +51,6 @@ def concerto_per_artista(artista, raccolta):
     except Exception as e:
         print("Errore durante la ricerca per nome dell'artista:", str(e))
 
-
 # Funzione per trovare i concerti per nome del concerto
 def trova_concerti_per_nome(nome, raccolta):
     try:
@@ -82,7 +80,6 @@ def trova_concerti_per_nome(nome, raccolta):
             print("Nessun concerto trovato.")
     except Exception as e:
         print("Errore durante la ricerca per nome del concerto:", str(e))
-
 
 # Funzione per trovare i concerti nell'intervallo di date specificato
 def trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta):
@@ -129,7 +126,6 @@ def trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta):
     except Exception as e:
         print("Errore durante la ricerca per intervallo di date:", str(e))
 
-
 def acquista_biglietti(concerto, raccolta):
     try:
         biglietti = concerto['biglietti']
@@ -168,7 +164,6 @@ def acquista_biglietti(concerto, raccolta):
 
     except Exception as e:
         print("Errore durante l'acquisto dei biglietti:", str(e))
-
 
 def trova_concerti_per_indirizzo(indirizzo, raggio, raccolta):
     try:
@@ -228,7 +223,6 @@ def trova_concerti_per_indirizzo(indirizzo, raggio, raccolta):
         print("Errore durante la ricerca per indirizzo:", str(e))
 
 
-
 if __name__ == "__main__":
     # Connessione al database e alla raccolta
     raccolta = connessione_mongo()
@@ -267,3 +261,5 @@ if __name__ == "__main__":
             trova_concerti_per_indirizzo(indirizzo, raggio, raccolta)
         else:
             print("Opzione non valida. Si prega di selezionare un'opzione da 1 a 4.")
+
+
