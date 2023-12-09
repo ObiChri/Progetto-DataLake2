@@ -21,8 +21,8 @@ def connessione_mongo():
         print("Errore durante la connessione a MongoDB:", str(e))
         return None
 
-# Funzione per trovare i concerti per nome dell'artista
 def concerto_per_artista(artista, raccolta):
+    """La funzione cerca e visualizza informazioni sui concerti associati a un determinato artista all'interno di una raccolta di dati""" 
     try:
         query = {"artisti.nome": {"$regex": artista, "$options": "i"}}
         risultati = raccolta.find(query)
@@ -51,8 +51,8 @@ def concerto_per_artista(artista, raccolta):
     except Exception as e:
         print("Errore durante la ricerca per nome dell'artista:", str(e))
 
-# Funzione per trovare i concerti per nome del concerto
 def trova_concerti_per_nome(nome, raccolta):
+    """ La funzione cerca e visualizza informazioni sui concerti associati a un determinato nome all'interno di una raccolta di dati.""" 
     try:
         query = {"nome": {"$regex": nome, "$options": "i"}}
         risultati = raccolta.find(query)
@@ -81,14 +81,13 @@ def trova_concerti_per_nome(nome, raccolta):
     except Exception as e:
         print("Errore durante la ricerca per nome del concerto:", str(e))
 
-# Funzione per trovare i concerti nell'intervallo di date specificato
 def trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta):
+""" La funzione  ricerca e visualizza informazioni sui concerti compresi in un intervallo di date specificato"""
     try:
-        # Converti le stringhe in oggetti datetime
+        # Conversione delle stringhe in oggetti datetime
         data_inizio = datetime.strptime(data_inizio, '%Y-%m-%d')
         data_fine = datetime.strptime(data_fine, '%Y-%m-%d')
 
-        # Query per trovare i concerti nell'intervallo di date
         query = {
             "data": {
                 "$gte": data_inizio,
@@ -96,10 +95,8 @@ def trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta):
             }
         }
 
-        # Esegui la query nella raccolta Concerti
         risultati = raccolta.find(query)
 
-        # Stampa i risultati trovati
         concerti = list(risultati)
         num_concerti = len(concerti)
 
@@ -117,7 +114,6 @@ def trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta):
                     disponibilita = biglietto['disponibili']
                     print(f"{tipo_biglietto}: Prezzo: {prezzo}€, Disponibili: {disponibilita}")
 
-            # Chiedi all'utente di selezionare un concerto
             scelta = int(input(f"Scegli il concerto da acquistare (1-{num_concerti}): "))
             concerto_selezionato = concerti[scelta - 1]  # Indice inizia da 0
             acquista_biglietti(concerto_selezionato, raccolta)
@@ -127,6 +123,7 @@ def trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta):
         print("Errore durante la ricerca per intervallo di date:", str(e))
 
 def acquista_biglietti(concerto, raccolta):
+""" La funzione gestisce il processo di acquisto dei biglietti per un concerto specificato""" 
     try:
         biglietti = concerto['biglietti']
 
@@ -166,11 +163,10 @@ def acquista_biglietti(concerto, raccolta):
         print("Errore durante l'acquisto dei biglietti:", str(e))
 
 def trova_concerti_per_indirizzo(indirizzo, raggio, raccolta):
+    """ La funzione icerca e visualizza informazioni sui concerti nelle vicinanze di un indirizzo specificato, entro un determinato raggio in chilometri."""
     try:
-        # Inizializza il geolocalizzatore
         geolocalizzatore = Nominatim(user_agent="ricerca_concerti", timeout=10)
 
-        # Ottieni le coordinate geografiche dell'indirizzo specificato
         posizione = geolocalizzatore.geocode(indirizzo)
 
         if posizione is None:
@@ -179,12 +175,10 @@ def trova_concerti_per_indirizzo(indirizzo, raggio, raccolta):
 
         coordinate_utente = (posizione.latitude, posizione.longitude)
 
-        # Trova tutti i concerti dal database
         tutti_concerti = list(raccolta.find())
 
         time.sleep(1)
 
-        # Filtra i concerti entro il raggio specificato
         concerti_vicini = []
         for concerto in tutti_concerti:
             posizione_concerto = geolocalizzatore.geocode(concerto['luogo'])
@@ -224,7 +218,6 @@ def trova_concerti_per_indirizzo(indirizzo, raggio, raccolta):
 
 
 if __name__ == "__main__":
-    # Connessione al database e alla raccolta
     raccolta = connessione_mongo()
 
     if raccolta is not None:
@@ -237,27 +230,19 @@ if __name__ == "__main__":
 
         scelta_utente = input("Inserisci il numero corrispondente all'opzione desiderata: ")
 
-        if scelta_utente == '1':
-            # Input dell'artista da cercare
+        if scelta_utente == '1': #ricerca per nome artista
             nome_artista = input("Inserisci il nome dell'artista da cercare: ")
-            # Trova i concerti dell'artista specificato
             concerto_per_artista(nome_artista, raccolta)
-        elif scelta_utente == '2':
-            # Input del nome concerto
+        elif scelta_utente == '2': #ricerca per nome concerto
             nome_concerto = input("Inserisci il nome del concerto da cercare: ")
-            # Trova i concerti per nome
             trova_concerti_per_nome(nome_concerto, raccolta)
-        elif scelta_utente == '3':
-            # Input per l'intervallo di date
+        elif scelta_utente == '3': #ricerca per intervallo di date
             data_inizio = input("Inserisci la data di inizio (YYYY-MM-DD): ")
             data_fine = input("Inserisci la data di fine (YYYY-MM-DD): ")
-            # Trova i concerti nell'intervallo di date
             trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta)
-        elif scelta_utente == '4':
-            # Input per l'indirizzo
+        elif scelta_utente == '4': #ricerca per indirizzo
             indirizzo = input("Inserisci l'indirizzo (via, città): ")
             raggio = 7  # Raggio di 7 km
-            # Trova i concerti entro il raggio di 7 km dall'indirizzo specificato
             trova_concerti_per_indirizzo(indirizzo, raggio, raccolta)
         else:
             print("Opzione non valida. Si prega di selezionare un'opzione da 1 a 4.")
