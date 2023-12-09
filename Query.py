@@ -1,18 +1,19 @@
 from pymongo import MongoClient
 from datetime import datetime
 from geopy.distance import geodesic
+from geopy.geocoders import Nominatim
+import time
 
-
-# Funzione per connettersi al database TicketTwo e alla collezione Concerti
-def connect_to_mongodb():
+def connessione_mongo():
+    """
+    Stabilisce una connessione a MongoDB e restituisce un oggetto di raccolta.
+    Da modificare con la propria stringa di connessione e con i propri nomi del database e della collection
+    """
     try:
-        # Inserisci la tua connection string
-        client = MongoClient("mongodb+srv://cbuondonno:yrQEJgK9SCFSQ5hp@cluster0.zvij7cy.mongodb.net/")
+        client = MongoClient("mongodb+srv://carlotta_mapelli:s2.Bb_%24%23m5P5Th_@cluster0.zhmcqeo.mongodb.net/") 
 
-        # Seleziona il database TicketTwo
-        db = client.TicketTwo
+        db = client.Tickettwo
 
-        # Seleziona la collezione Concerti
         collection = db.Concerti
 
         return collection
@@ -22,30 +23,30 @@ def connect_to_mongodb():
 
 
 # Funzione per trovare i concerti per nome dell'artista
-def find_concerts_by_artist(artist, collection):
+def concerto_per_artista(artista, raccolta):
     try:
-        query = {"artisti.nome": {"$regex": artist, "$options": "i"}}
-        results = collection.find(query)
+        query = {"artisti.nome": {"$regex": artista, "$options": "i"}}
+        risultati = raccolta.find(query)
 
-        concerts = list(results)
-        num_concerts = len(concerts)
+        concerti = list(risultati)
+        num_concerti = len(concerti)
 
-        if num_concerts > 0:
-            print(f"Concerti trovati: {num_concerts}")
-            for i, concert in enumerate(concerts, start=1):
+        if num_concerti > 0:
+            print(f"Concerti trovati: {num_concerti}")
+            for i, concerto in enumerate(concerti, start=1):
                 print(f"\nConcerto {i}:")
-                print(f"Nome: {concert['nome']}")
-                print(f"Data: {concert['data'].strftime('%d-%m-%Y')}")
-                print(f"Luogo: {concert['luogo']}")
-                for ticket in concert['biglietti']:
-                    ticket_type = ticket['tipo'].capitalize()
-                    price = ticket['prezzo']
-                    availability = ticket['disponibili']
-                    print(f"{ticket_type}: Prezzo: {price}€, Disponibili: {availability}")
+                print(f"Nome: {concerto['nome']}")
+                print(f"Data: {concerto['data'].strftime('%d-%m-%Y')}")
+                print(f"Luogo: {concerto['luogo']}")
+                for biglietto in concerto['biglietti']:
+                    tipo_biglietto = biglietto['tipo'].capitalize()
+                    prezzo = biglietto['prezzo']
+                    disponibilita = biglietto['disponibili']
+                    print(f"{tipo_biglietto}: Prezzo: {prezzo}€, Disponibili: {disponibilita}")
 
-            choice = int(input(f"Scegli il concerto da acquistare (1-{num_concerts}): "))
-            selected_concert = concerts[choice - 1]  # Indice inizia da 0
-            buy_tickets(selected_concert, collection)
+            scelta = int(input(f"Scegli il concerto da acquistare (1-{num_concerti}): "))
+            concerto_selezionato = concerti[scelta - 1]  # Indice inizia da 0
+            acquista_biglietti(concerto_selezionato, raccolta)
         else:
             print("Nessun concerto trovato.")
     except Exception as e:
@@ -53,30 +54,30 @@ def find_concerts_by_artist(artist, collection):
 
 
 # Funzione per trovare i concerti per nome del concerto
-def find_concerts_by_name(name, collection):
+def trova_concerti_per_nome(nome, raccolta):
     try:
-        query = {"nome": {"$regex": name, "$options": "i"}}
-        results = collection.find(query)
+        query = {"nome": {"$regex": nome, "$options": "i"}}
+        risultati = raccolta.find(query)
 
-        concerts = list(results)
-        num_concerts = len(concerts)
+        concerti = list(risultati)
+        num_concerti = len(concerti)
 
-        if num_concerts > 0:
-            print(f"Concerti trovati: {num_concerts}")
-            for i, concert in enumerate(concerts, start=1):
+        if num_concerti > 0:
+            print(f"Concerti trovati: {num_concerti}")
+            for i, concerto in enumerate(concerti, start=1):
                 print(f"\nConcerto {i}:")
-                print(f"Nome: {concert['nome']}")
-                print(f"Data: {concert['data'].strftime('%d-%m-%Y')}")
-                print(f"Luogo: {concert['luogo']}")
-                for ticket in concert['biglietti']:
-                    ticket_type = ticket['tipo'].capitalize()
-                    price = ticket['prezzo']
-                    availability = ticket['disponibili']
-                    print(f"{ticket_type}: Prezzo: {price}€, Disponibili: {availability}")
+                print(f"Nome: {concerto['nome']}")
+                print(f"Data: {concerto['data'].strftime('%d-%m-%Y')}")
+                print(f"Luogo: {concerto['luogo']}")
+                for biglietto in concerto['biglietti']:
+                    tipo_biglietto = biglietto['tipo'].capitalize()
+                    prezzo = biglietto['prezzo']
+                    disponibilita = biglietto['disponibili']
+                    print(f"{tipo_biglietto}: Prezzo: {prezzo}€, Disponibili: {disponibilita}")
 
-            choice = int(input(f"Scegli il concerto da acquistare (1-{num_concerts}): "))
-            selected_concert = concerts[choice - 1]  # Indice inizia da 0
-            buy_tickets(selected_concert, collection)
+            scelta = int(input(f"Scegli il concerto da acquistare (1-{num_concerti}): "))
+            concerto_selezionato = concerti[scelta - 1]  # Indice inizia da 0
+            acquista_biglietti(concerto_selezionato, raccolta)
         else:
             print("Nessun concerto trovato.")
     except Exception as e:
@@ -84,122 +85,84 @@ def find_concerts_by_name(name, collection):
 
 
 # Funzione per trovare i concerti nell'intervallo di date specificato
-def find_concerts_by_date_interval(start_date, end_date, collection):
+def trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta):
     try:
         # Converti le stringhe in oggetti datetime
-        start_date = datetime.strptime(start_date, '%Y-%m-%d')
-        end_date = datetime.strptime(end_date, '%Y-%m-%d')
+        data_inizio = datetime.strptime(data_inizio, '%Y-%m-%d')
+        data_fine = datetime.strptime(data_fine, '%Y-%m-%d')
 
         # Query per trovare i concerti nell'intervallo di date
         query = {
             "data": {
-                "$gte": start_date,
-                "$lte": end_date
+                "$gte": data_inizio,
+                "$lte": data_fine
             }
         }
 
-        # Esegui la query nella collezione Concerti
-        results = collection.find(query)
+        # Esegui la query nella raccolta Concerti
+        risultati = raccolta.find(query)
 
         # Stampa i risultati trovati
-        concerts = list(results)
-        num_concerts = len(concerts)
+        concerti = list(risultati)
+        num_concerti = len(concerti)
 
-        if num_concerts > 0:
+        if num_concerti > 0:
             print(
-                f"Concerti trovati nell'intervallo di date ({start_date.strftime('%d-%m-%Y')} - {end_date.strftime('%d-%m-%Y')}):")
-            for i, concert in enumerate(concerts, start=1):
+                f"Concerti trovati nell'intervallo di date ({data_inizio.strftime('%d-%m-%Y')} - {data_fine.strftime('%d-%m-%Y')}):")
+            for i, concerto in enumerate(concerti, start=1):
                 print(f"\nConcerto {i}:")
-                print(f"Nome: {concert['nome']}")
-                print(f"Data: {concert['data'].strftime('%d-%m-%Y')}")
-                print(f"Luogo: {concert['luogo']}")
-                for ticket in concert['biglietti']:
-                    ticket_type = ticket['tipo'].capitalize()
-                    price = ticket['prezzo']
-                    availability = ticket['disponibili']
-                    print(f"{ticket_type}: Prezzo: {price}€, Disponibili: {availability}")
+                print(f"Nome: {concerto['nome']}")
+                print(f"Data: {concerto['data'].strftime('%d-%m-%Y')}")
+                print(f"Luogo: {concerto['luogo']}")
+                for biglietto in concerto['biglietti']:
+                    tipo_biglietto = biglietto['tipo'].capitalize()
+                    prezzo = biglietto['prezzo']
+                    disponibilita = biglietto['disponibili']
+                    print(f"{tipo_biglietto}: Prezzo: {prezzo}€, Disponibili: {disponibilita}")
 
             # Chiedi all'utente di selezionare un concerto
-            choice = int(input(f"Scegli il concerto da acquistare (1-{num_concerts}): "))
-            selected_concert = concerts[choice - 1]  # Indice inizia da 0
-            buy_tickets(selected_concert, collection)
+            scelta = int(input(f"Scegli il concerto da acquistare (1-{num_concerti}): "))
+            concerto_selezionato = concerti[scelta - 1]  # Indice inizia da 0
+            acquista_biglietti(concerto_selezionato, raccolta)
         else:
             print("Nessun concerto trovato nell'intervallo di date specificato")
     except Exception as e:
         print("Errore durante la ricerca per intervallo di date:", str(e))
 
 
-# Ricerca per vicinanza geografica
-def find_concerts_by_location(latitude, longitude, radius, collection):
+def acquista_biglietti(concerto, raccolta):
     try:
-        # Coordiante del luogo dell'utente
-        user_location = (latitude, longitude)
+        biglietti = concerto['biglietti']
 
-        # Query per trovare i concerti entro il raggio specificato
-        all_concerts = collection.find({})  # Ottieni tutti i concerti
-
-        concerts_within_radius = []
-        for concert in all_concerts:
-            # Coordiante del luogo del concerto
-            concert_location = (concert['posizione']['coordinates'][1], concert['posizione']['coordinates'][0])
-
-            # Calcola la distanza tra il luogo dell'utente e il luogo del concerto
-            distance = geodesic(user_location, concert_location).kilometers
-
-            # Aggiungi il concerto alla lista se è entro il raggio specificato
-            if distance <= radius:
-                concerts_within_radius.append(concert)
-
-        num_concerts = len(concerts_within_radius)
-        if num_concerts > 0:
-            print(f"Concerti trovati entro {radius} km dal luogo specificato: {num_concerts}")
-            # Visualizza o elabora i risultati come desiderato
-            for concert in concerts_within_radius:
-                # Mostra i dettagli del concerto
-                print(f"Nome: {concert['nome']}, Data: {concert['data']}, Altro: ...")
-
-        else:
-            print(f"Nessun concerto trovato entro {radius} km dal luogo specificato")
-    except Exception as e:
-        print("Errore durante la ricerca dei concerti per vicinanza:", str(e))
-
-
-from bson import ObjectId
-
-
-def buy_tickets(concert, collection):
-    try:
-        tickets = concert['biglietti']
-
-        print(f"I tipi di biglietti disponibili per il concerto '{concert['nome']}' sono:")
-        for idx, ticket in enumerate(tickets, start=1):
+        print(f"I tipi di biglietti disponibili per il concerto '{concerto['nome']}' sono:")
+        for idx, biglietto in enumerate(biglietti, start=1):
             print(
-                f"{idx}. {ticket['tipo'].capitalize()}: Prezzo: {ticket['prezzo']}€, Disponibili: {ticket['disponibili']}")
+                f"{idx}. {biglietto['tipo'].capitalize()}: Prezzo: {biglietto['prezzo']}€, Disponibili: {biglietto['disponibili']}")
 
-        ticket_choice = int(input(f"Scegli il tipo di biglietto da acquistare (1-{len(tickets)}): "))
-        selected_ticket = tickets[ticket_choice - 1]
+        scelta_biglietto = int(input(f"Scegli il tipo di biglietto da acquistare (1-{len(biglietti)}): "))
+        biglietto_selezionato = biglietti[scelta_biglietto - 1]
 
-        availability = selected_ticket['disponibili']
-        price = selected_ticket['prezzo']
-        ticket_type = selected_ticket['tipo']
+        disponibilita = biglietto_selezionato['disponibili']
+        prezzo = biglietto_selezionato['prezzo']
+        tipo_biglietto = biglietto_selezionato['tipo']
 
-        if availability == 0:
-            print(f"I biglietti {ticket_type.capitalize()} per questo concerto sono esauriti.")
+        if disponibilita == 0:
+            print(f"I biglietti {tipo_biglietto.capitalize()} per questo concerto sono esauriti.")
         else:
-            tickets_to_buy = int(input(
-                f"Quanti biglietti {ticket_type.capitalize()} vuoi acquistare? (Disponibili: {availability}): "))
+            biglietti_da_acquistare = int(input(
+                f"Quanti biglietti {tipo_biglietto.capitalize()} vuoi acquistare? (Disponibili: {disponibilita}): "))
 
-            if tickets_to_buy > 0 and tickets_to_buy <= availability:
-                updated_availability = availability - tickets_to_buy
-                collection.update_one({"_id": concert["_id"]},
-                                      {"$set": {"biglietti.$[elem].disponibili": updated_availability}},
-                                      array_filters=[{"elem.tipo": ticket_type}])
+            if 0 < biglietti_da_acquistare <= disponibilita:
+                disponibilita_aggiornata = disponibilita - biglietti_da_acquistare
+                raccolta.update_one({"_id": concerto["_id"]},
+                                      {"$set": {"biglietti.$[elem].disponibili": disponibilita_aggiornata}},
+                                      array_filters=[{"elem.tipo": tipo_biglietto}])
 
-                total_price = price * tickets_to_buy
+                prezzo_totale = prezzo * biglietti_da_acquistare
                 print(
-                    f"Hai acquistato {tickets_to_buy} biglietti {ticket_type.capitalize()} per il concerto '{concert['nome']}'. "
-                    f"Totale: {total_price}€")
-                print(f"Disponibilità rimasta: {updated_availability}")
+                    f"Hai acquistato {biglietti_da_acquistare} biglietti {tipo_biglietto.capitalize()} per il concerto '{concerto['nome']}'. "
+                    f"Totale: {prezzo_totale}€")
+                print(f"Disponibilità rimasta: {disponibilita_aggiornata}")
             else:
                 print("Quantità non valida o biglietti esauriti.")
 
@@ -207,48 +170,100 @@ def buy_tickets(concert, collection):
         print("Errore durante l'acquisto dei biglietti:", str(e))
 
 
-def main():
-    # Connessione al database e alla collezione
-    collection = connect_to_mongodb()
+def trova_concerti_per_indirizzo(indirizzo, raggio, raccolta):
+    try:
+        # Inizializza il geolocalizzatore
+        geolocalizzatore = Nominatim(user_agent="ricerca_concerti", timeout=10)
 
-    if collection is not None:
-        total_concerts = collection.count_documents({})
-        print(f"Seleziona l'opzione di ricerca tra {total_concerts} concerti disponibili:")
+        # Ottieni le coordinate geografiche dell'indirizzo specificato
+        posizione = geolocalizzatore.geocode(indirizzo)
+
+        if posizione is None:
+            print("Indirizzo non trovato.")
+            return
+
+        coordinate_utente = (posizione.latitude, posizione.longitude)
+
+        # Trova tutti i concerti dal database
+        tutti_concerti = list(raccolta.find())
+
+        time.sleep(1)
+
+        # Filtra i concerti entro il raggio specificato
+        concerti_vicini = []
+        for concerto in tutti_concerti:
+            posizione_concerto = geolocalizzatore.geocode(concerto['luogo'])
+            if posizione_concerto is None:
+                continue
+
+            coordinate_concerto = (posizione_concerto.latitude, posizione_concerto.longitude)
+
+            # Calcola la distanza tra l'indirizzo utente e il concerto
+            distanza = geodesic(coordinate_utente, coordinate_concerto).kilometers
+
+            # Se il concerto è entro il raggio specificato, aggiungilo alla lista dei concerti vicini
+            if distanza <= raggio:
+                concerti_vicini.append(concerto)
+
+        num_concerti_vicini = len(concerti_vicini)
+        if num_concerti_vicini > 0:
+            print(f"Concerti trovati entro {raggio} km da '{indirizzo}': {num_concerti_vicini}")
+            for i, concerto in enumerate(concerti_vicini, start=1):
+                print(f"\nConcerto {i}:")
+                print(f"Nome: {concerto['nome']}")
+                print(f"Data: {concerto['data'].strftime('%d-%m-%Y')}")
+                print(f"Luogo: {concerto['luogo']}")
+                for biglietto in concerto['biglietti']:
+                    tipo_biglietto = biglietto['tipo'].capitalize()
+                    prezzo = biglietto['prezzo']
+                    disponibilita = biglietto['disponibili']
+                    print(f"{tipo_biglietto}: Prezzo: {prezzo}€, Disponibili: {disponibilita}")
+
+            scelta = int(input(f"Scegli il concerto da acquistare (1-{num_concerti_vicini}): "))
+            concerto_selezionato = concerti_vicini[scelta - 1]  # Indice inizia da 0
+            acquista_biglietti(concerto_selezionato, raccolta)
+        else:
+            print(f"Nessun concerto trovato entro {raggio} km da '{indirizzo}'.")
+    except Exception as e:
+        print("Errore durante la ricerca per indirizzo:", str(e))
+
+
+
+if __name__ == "__main__":
+    # Connessione al database e alla raccolta
+    raccolta = connessione_mongo()
+
+    if raccolta is not None:
+        totale_concerti = raccolta.count_documents({})
+        print(f"Seleziona l'opzione di ricerca tra {totale_concerti} concerti disponibili:")
         print("1. Cerca per nome dell'artista")
         print("2. Cerca per nome del concerto")
         print("3. Cerca per intervallo di date")
         print("4. Cerca per vicinanza geografica")
 
-        user_choice = input("Inserisci il numero corrispondente all'opzione desiderata: ")
+        scelta_utente = input("Inserisci il numero corrispondente all'opzione desiderata: ")
 
-        if user_choice == '1':
+        if scelta_utente == '1':
             # Input dell'artista da cercare
-            artist_name = input("Inserisci il nome dell'artista da cercare: ")
+            nome_artista = input("Inserisci il nome dell'artista da cercare: ")
             # Trova i concerti dell'artista specificato
-            find_concerts_by_artist(artist_name, collection)
-        elif user_choice == '2':
+            concerto_per_artista(nome_artista, raccolta)
+        elif scelta_utente == '2':
             # Input del nome concerto
-            concert_name = input("Inserisci il nome del concerto da cercare: ")
+            nome_concerto = input("Inserisci il nome del concerto da cercare: ")
             # Trova i concerti per nome
-            concert = find_concerts_by_name(concert_name, collection)
-            if concert:
-                buy_tickets(concert, collection)
-        elif user_choice == '3':
+            trova_concerti_per_nome(nome_concerto, raccolta)
+        elif scelta_utente == '3':
             # Input per l'intervallo di date
-            start_date = input("Inserisci la data di inizio (YYYY-MM-DD): ")
-            end_date = input("Inserisci la data di fine (YYYY-MM-DD): ")
+            data_inizio = input("Inserisci la data di inizio (YYYY-MM-DD): ")
+            data_fine = input("Inserisci la data di fine (YYYY-MM-DD): ")
             # Trova i concerti nell'intervallo di date
-            find_concerts_by_date_interval(start_date, end_date, collection)
-        elif user_choice == '4':
-            # Input per la vicinanza geografica
-            latitude = float(input("Inserisci la latitudine del tuo luogo: "))
-            longitude = float(input("Inserisci la longitudine del tuo luogo: "))
-            radius = float(input("Inserisci il raggio di ricerca in chilometri: "))
-            # Trova i concerti entro la vicinanza geografica
-            find_concerts_by_location(latitude, longitude, radius, collection)
+            trova_concerti_per_intervallo_date(data_inizio, data_fine, raccolta)
+        elif scelta_utente == '4':
+            # Input per l'indirizzo
+            indirizzo = input("Inserisci l'indirizzo (via, città): ")
+            raggio = 7  # Raggio di 7 km
+            # Trova i concerti entro il raggio di 7 km dall'indirizzo specificato
+            trova_concerti_per_indirizzo(indirizzo, raggio, raccolta)
         else:
             print("Opzione non valida. Si prega di selezionare un'opzione da 1 a 4.")
-
-
-if __name__ == "__main__":
-    main()
