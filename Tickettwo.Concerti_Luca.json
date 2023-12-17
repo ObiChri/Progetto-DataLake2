@@ -1,0 +1,2118 @@
+[{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e2e"
+  },
+  "nome": "MIAMI",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "I cani",
+      "genere": "Indie pop"
+    },
+    {
+      "nome": "Mobrici",
+      "genere": "Indie pop"
+    },
+    {
+      "nome": "Giorgio Poi",
+      "genere": "Indie pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-25T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Circolo Magnolia",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 50
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 300
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656df84a21bd2dc50791302b"
+  },
+  "nome": "MIAMI",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Fulminacci",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Zero Assoluto",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Massimo Pericolo",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-26T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Circolo Magnolia",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 50
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 300
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656df95a21bd2dc50791302c"
+  },
+  "nome": "MIAMI",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Tre Allegri Ragazzi Morti",
+      "genere": "Indie pop"
+    },
+    {
+      "nome": "Cosmo",
+      "genere": "Alternativa"
+    },
+    {
+      "nome": "PoetrySlamming",
+      "genere": "Poesia"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-27T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Circolo Magnolia",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 50
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 300
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656dfa2221bd2dc50791302d"
+  },
+  "nome": "Jova Beach Party",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Jovanotti",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-13T18:00:00.000Z"
+  },
+  "citta": "Riccione",
+  "luogo": "Lido di Riccione",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 1000,
+      "disponibili": 200
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 80,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656dfab421bd2dc50791302e"
+  },
+  "nome": "The Eras Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Taylor Swift",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-13T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 1000,
+      "disponibili": 50
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656dfb7b21bd2dc50791302f"
+  },
+  "nome": "Elements Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Ed Sheeran",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-24T21:00:00.000Z"
+  },
+  "citta": "Roma",
+  "luogo": "Stadio Olimpico",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      12.457392692565918,
+      41.89020994866327
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656e004a21bd2dc507913030"
+  },
+  "nome": "iDays Coca-Cola Summer Festiva",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "The Black Keys",
+      "genere": "Alternative"
+    },
+    {
+      "nome": "Liam Gallagher",
+      "genere": "Rock"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-26T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Ippodromo SNAI La Maura",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 150
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 3000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656ee13c49401081a90b96fc"
+  },
+  "nome": "The Eras Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Taylor Swift",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-14T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 1000,
+      "disponibili": 50
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656ee16a49401081a90b96fd"
+  },
+  "nome": "Jova negli stadi",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Jovanotti",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-08T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 550,
+      "disponibili": 247
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 90,
+      "disponibili": 5993
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656ee4cd49401081a90b9701"
+  },
+  "nome": "iDays Coca-Cola Summer Festiva",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Arctic Monkeys",
+      "genere": "Rock"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-29T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Ippodromo SNAI La Maura",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 150
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 3000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656eecb349401081a90b9703"
+  },
+  "nome": "Jazz trio - Live",
+  "categoria": "Musica dal vivo",
+  "artisti": [
+    {
+      "nome": "I jazzisti",
+      "genere": "Jazz"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-03T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Teatro Mazzacorati",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656eed9049401081a90b9704"
+  },
+  "nome": "Concerto di Natale",
+  "categoria": "Musica dal vivo",
+  "artisti": [
+    {
+      "nome": "Coro dell'Emilia Romagna",
+      "genere": "Musica corale"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-20T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Teatro Mazzacorati",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656ef98649401081a90b9705"
+  },
+  "nome": "No Stress Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Rkomi",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Irama",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-10T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Unipol Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 58,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656efd7549401081a90b9706"
+  },
+  "nome": "La Divina Commedia Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Tedua",
+      "genere": "Trap"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-10T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Unipol Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 58,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656efe1d49401081a90b9707"
+  },
+  "nome": "Tour nei Tropici",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Tropico",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-16T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Unipol Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.370024915344146,
+      44.46943275776073
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 58,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656f38a949401081a90b9708"
+  },
+  "nome": "Eterna Poesia Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Ludovico Einaudi",
+      "genere": "Classica"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-15T20:30:00.000Z"
+  },
+  "citta": "Roma",
+  "luogo": "Auditorium Parco della Musica",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      12.475554704666138,
+      41.92945178197598
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 800,
+      "disponibili": 150
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 1800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656f38e349401081a90b9709"
+  },
+  "nome": "Viaggio Sonoro",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Elisa",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-07-18T19:30:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Mediolanum Forum",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.214594602584839,
+      45.45068219839257
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 700,
+      "disponibili": 200
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 1500
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656f395449401081a90b970a"
+  },
+  "nome": "Notte Siciliana",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Emma Marrone",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-09-08T20:00:00.000Z"
+  },
+  "citta": "Palermo",
+  "luogo": "Teatro Massimo",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      13.365590810775757,
+      38.11569758372459
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 680,
+      "disponibili": 180
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 45,
+      "disponibili": 1598
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656f3a6849401081a90b970c"
+  },
+  "nome": "Magica Serata",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Emma Marrone",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-06-25T19:45:00.000Z"
+  },
+  "citta": "Potenza",
+  "luogo": "Teatro Francesco Stabile",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      15.806248903274536,
+      40.64206209555457
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 700,
+      "disponibili": 150
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 55,
+      "disponibili": 1200
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656f436349401081a90b970d"
+  },
+  "nome": "Love Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Thegiornalisti",
+      "genere": "Indie Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-03-28T20:30:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Alcatraz",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.192572832107544,
+      45.50493063135212
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 250,
+      "disponibili": 180
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 55,
+      "disponibili": 1200
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656f43dc49401081a90b970e"
+  },
+  "nome": "Armonie al Verdi",
+  "categoria": "Musica Live",
+  "artisti": [
+    {
+      "nome": "Paolo Conte",
+      "genere": "Jazz"
+    },
+    {
+      "nome": "Elisa",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-03-12T19:30:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Teatro Verdi",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.190610408782959,
+      45.46150007977087
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 800,
+      "disponibili": 120
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "656f4500597d61aa4321c86e"
+  },
+  "nome": "Concerto Primo Maggio",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Laura Pausini",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Edoardo Bennato",
+      "genere": "Folk-Rock"
+    },
+    {
+      "nome": "Jovanotti",
+      "genere": "Pop-Rock"
+    },
+    {
+      "nome": "Giorgia",
+      "genere": "Soul"
+    },
+    {
+      "nome": "Eros Ramazzotti",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-01T19:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Piazza Duomo",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.191454887390137,
+      45.46410194711525
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 850,
+      "disponibili": 200
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 1497
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e30"
+  },
+  "nome": "Rock Fusion Night",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Gianluca Grigniani",
+      "genere": "Rock"
+    },
+    {
+      "nome": "Manuel Agnelli",
+      "genere": "Rock"
+    }
+  ],
+  "data": {
+    "$date": "2024-02-20T19:30:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Rock Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.189512,
+      45.464204
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 80,
+      "disponibili": 30
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 40,
+      "disponibili": 150
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e31"
+  },
+  "nome": "Pop Extravaganza",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Marco Mengoni ",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Eros Ramazzotti",
+      "genere": "R&B"
+    }
+  ],
+  "data": {
+    "$date": "2024-04-10T18:00:00.000Z"
+  },
+  "citta": "Napoli",
+  "luogo": "Pop Dome",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      14.248025,
+      40.852167
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 70,
+      "disponibili": 25
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 35,
+      "disponibili": 180
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e32"
+  },
+  "nome": "EDM Explosion",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Carlo Zerulo Dj",
+      "genere": "EDM"
+    },
+    {
+      "nome": "The Buildzer",
+      "genere": "Dubstep"
+    }
+  ],
+  "data": {
+    "$date": "2024-06-15T21:00:00.000Z"
+  },
+  "citta": "Firenze",
+  "luogo": "EDM Park",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.255813,
+      43.76956
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 20
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e33"
+  },
+  "nome": "EDM Explosion",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Carlo Zerulo Dj",
+      "genere": "EDM"
+    },
+    {
+      "nome": "The Buildzer",
+      "genere": "Dubstep"
+    }
+  ],
+  "data": {
+    "$date": "2024-06-16T21:00:00.000Z"
+  },
+  "citta": "Firenze",
+  "luogo": "EDM Park",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.255813,
+      43.76956
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 20
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 250
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e34"
+  },
+  "nome": "EDM Explosion",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Carlo Zerulo Dj",
+      "genere": "EDM"
+    },
+    {
+      "nome": "The Buildzer",
+      "genere": "Dubstep"
+    }
+  ],
+  "data": {
+    "$date": "2024-06-17T21:00:00.000Z"
+  },
+  "citta": "Firenze",
+  "luogo": "EDM Park",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.255813,
+      43.76956
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 20
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 60,
+      "disponibili": 249
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e35"
+  },
+  "nome": "Classical Serenade",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Symphony Orchestra",
+      "genere": "Classical"
+    },
+    {
+      "nome": "Opera Diva",
+      "genere": "Opera"
+    }
+  ],
+  "data": {
+    "$date": "2024-08-05T20:30:00.000Z"
+  },
+  "citta": "Verona",
+  "luogo": "Opera House",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      10.993355,
+      45.438384
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 90,
+      "disponibili": 15
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 180
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e36"
+  },
+  "nome": "Indie Vibes",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Gazzelle",
+      "genere": "Indie Folk"
+    },
+    {
+      "nome": "MYSS Keta",
+      "genere": "Alternative Rock"
+    }
+  ],
+  "data": {
+    "$date": "2024-09-20T19:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Indie Lounge",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.342616,
+      44.494887
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 75,
+      "disponibili": 25
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 45,
+      "disponibili": 160
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e37"
+  },
+  "nome": "Latin Rhythms Fiesta",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Marquito",
+      "genere": "Salsa"
+    },
+    {
+      "nome": "Pacheco",
+      "genere": "Bachata"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-10T22:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Latin Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.124375822138262,
+      45.51157487472861
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 110,
+      "disponibili": 15
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 200
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e38"
+  },
+  "nome": "Latin Rhythms Fiesta",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Marquito",
+      "genere": "Salsa"
+    },
+    {
+      "nome": "Pacheco",
+      "genere": "Bachata"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-11T22:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Latin Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.124375822138262,
+      45.51157487472861
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 110,
+      "disponibili": 15
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 200
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e39"
+  },
+  "nome": "Country Roads Jam",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Highway 66 Country Band",
+      "genere": "Country"
+    },
+    {
+      "nome": "DriveWheel",
+      "genere": "Bluegrass"
+    }
+  ],
+  "data": {
+    "$date": "2024-11-15T18:30:00.000Z"
+  },
+  "citta": "Bergamo",
+  "luogo": "Country Hall",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.684638925754086,
+      45.71127135443956
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 85,
+      "disponibili": 20
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 55,
+      "disponibili": 170
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e3a"
+  },
+  "nome": "Blues Explosion",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Paolo Bonfanti",
+      "genere": "Blues"
+    },
+    {
+      "nome": "Zucchero",
+      "genere": "Soul"
+    }
+  ],
+  "data": {
+    "$date": "2024-01-25T21:00:00.000Z"
+  },
+  "citta": "Foggia",
+  "luogo": "Blues Lounge",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      15.544503345844987,
+      41.46032343104275
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 75,
+      "disponibili": 30
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 45,
+      "disponibili": 160
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e3b"
+  },
+  "nome": "Metal Mayhem",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "STRANA OFFICINA",
+      "genere": "Heavy Metal"
+    },
+    {
+      "nome": "EXTREMA",
+      "genere": "Thrash Metal"
+    }
+  ],
+  "data": {
+    "$date": "2024-03-08T20:45:00.000Z"
+  },
+  "citta": "Latina",
+  "luogo": "Metal Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      12.901594723337638,
+      41.45341871712992
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 95,
+      "disponibili": 25
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 55,
+      "disponibili": 180
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e3c"
+  },
+  "nome": "Acoustic Serenity",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Eliza G",
+      "genere": "Acoustic"
+    },
+    {
+      "nome": "Edoardo Bennato",
+      "genere": "Folk"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-12T19:00:00.000Z"
+  },
+  "citta": "Nuoro",
+  "luogo": "Acoustic Lounge",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.29088146449601,
+      40.35072755770159
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 85,
+      "disponibili": 20
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 150
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65675856e85a53e78e895e3d"
+  },
+  "nome": "Acoustic Serenity",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Eliza G",
+      "genere": "Acoustic"
+    },
+    {
+      "nome": "Edoardo Bennato",
+      "genere": "Folk"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-13T19:00:00.000Z"
+  },
+  "citta": "Nuoro",
+  "luogo": "Acoustic Lounge",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.29088146449601,
+      40.35072755770159
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 85,
+      "disponibili": 20
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 150
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65747f7e7baf1199281364b8"
+  },
+  "nome": "Jova negli stadi",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Jovanotti",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-11-11T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.252246830687142,
+      45.452188859910905
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 250,
+      "disponibili": 50
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 150,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 70,
+      "disponibili": 800
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed135a623b3ad4b93746b"
+  },
+  "nome": "La favola continua",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Ultimo",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-01-21T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.123858000001832,
+      45.47802649252773
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 1000,
+      "disponibili": 70
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 200
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 1000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed1c1a623b3ad4b93746c"
+  },
+  "nome": "La favola continua",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Ultimo",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-01-23T21:00:00.000Z"
+  },
+  "citta": "Torino",
+  "luogo": "Stadio Olimpico Grande Torino",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      7.6500337711655675,
+      45.04174962119973
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 1000,
+      "disponibili": 70
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 200
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 1000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed1f7a623b3ad4b93746d"
+  },
+  "nome": "La favola continua",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Ultimo",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-01-26T21:00:00.000Z"
+  },
+  "citta": "Roma",
+  "luogo": "Stadio Olimpico",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      12.454748771164645,
+      41.93390468225343
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 1000,
+      "disponibili": 70
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 200
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 1000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed227a623b3ad4b93746e"
+  },
+  "nome": "La favola continua",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Ultimo",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-01-29T21:00:00.000Z"
+  },
+  "citta": "Napoli",
+  "luogo": "San Siro Stadio",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      14.192924561324986,
+      40.82793270345476
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip plus",
+      "prezzo": 1000,
+      "disponibili": 70
+    },
+    {
+      "tipo": "vip",
+      "prezzo": 750,
+      "disponibili": 200
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 200,
+      "disponibili": 1000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed25ca623b3ad4b93746f"
+  },
+  "nome": "Marrageddon",
+  "categoria": "Festival",
+  "artisti": [
+    {
+      "nome": "Marracash",
+      "genere": "Rap"
+    },
+    {
+      "nome": "Fabri Fibra",
+      "genere": "Rap"
+    },
+    {
+      "nome": "Gue",
+      "genere": "Rap"
+    },
+    {
+      "nome": "Lazza",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-10-02T20:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Ippodromo SNAI La Maura",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.129258865893007,
+      45.481712667754266
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 130,
+      "disponibili": 50
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 40,
+      "disponibili": 400
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed2a4a623b3ad4b937470"
+  },
+  "nome": "No Stress Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Rkomi",
+      "genere": "Pop"
+    },
+    {
+      "nome": "Irama",
+      "genere": "Pop"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-12T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Mediolanum Forum",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.142251066131536,
+      45.40137099161308
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 130,
+      "disponibili": 70
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 58,
+      "disponibili": 400
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed2f5a623b3ad4b937471"
+  },
+  "nome": "Ouvertour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Lazza",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-03-10T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Mediolanum Forum",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.142251066131536,
+      45.40137099161308
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 300,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed309a623b3ad4b937472"
+  },
+  "nome": "Ouvertour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Lazza",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-03-12T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Unipol Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.24792827116292,
+      44.485981223874745
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 300,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed32aa623b3ad4b937473"
+  },
+  "nome": "Ouvertour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Lazza",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-03-14T21:00:00.000Z"
+  },
+  "citta": "Firenze",
+  "luogo": "Mandela Forum",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.283097805555997,
+      43.77675316034362
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 300,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 50,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed350a623b3ad4b937474"
+  },
+  "nome": "Invisibili Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Il Tre",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-15T21:00:00.000Z"
+  },
+  "citta": "Roma",
+  "luogo": "Palazzo dello Sport",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      12.466574136246265,
+      41.825304054725734
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 120
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 30,
+      "disponibili": 700
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed36ba623b3ad4b937475"
+  },
+  "nome": "Invisibili Tour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Il Tre",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-12-17T21:00:00.000Z"
+  },
+  "citta": "Torino",
+  "luogo": "PalaAlpitour",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      7.652241000001595,
+      45.041562164676606
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 100,
+      "disponibili": 120
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 30,
+      "disponibili": 700
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed394a623b3ad4b937476"
+  },
+  "nome": "SNSR 2024",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Sfera Ebbasta",
+      "genere": "Trap"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-20T21:00:00.000Z"
+  },
+  "citta": "Milano",
+  "luogo": "Mediolanum Forum",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.142251066131536,
+      45.40137099161308
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 250,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 70,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed3aca623b3ad4b937477"
+  },
+  "nome": "SNSR 2024",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Sfera Ebbasta",
+      "genere": "Trap"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-17T21:00:00.000Z"
+  },
+  "citta": "Bologna",
+  "luogo": "Unipol Arena",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      11.24792827116292,
+      44.485981223874745
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 250,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 70,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed400a623b3ad4b937478"
+  },
+  "nome": "SNSR 2024",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Sfera Ebbasta",
+      "genere": "Trap"
+    }
+  ],
+  "data": {
+    "$date": "2024-05-15T21:00:00.000Z"
+  },
+  "citta": "Torino",
+  "luogo": "PalaAlpitour",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      7.652241000001595,
+      45.041562164676606
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 250,
+      "disponibili": 250
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 70,
+      "disponibili": 2000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed447a623b3ad4b937479"
+  },
+  "nome": "CVLTour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Salmo",
+      "genere": "Rap"
+    },
+    {
+      "nome": "Noyz Narcos",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-09-11T21:00:00.000Z"
+  },
+  "citta": "Cagliari",
+  "luogo": "Palazzetto dello Sport",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      9.135427177646704,
+      39.20240055963541
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 160,
+      "disponibili": 150
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 1000
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "657ed463a623b3ad4b93747a"
+  },
+  "nome": "CVLTour",
+  "categoria": "Concerto",
+  "artisti": [
+    {
+      "nome": "Salmo",
+      "genere": "Rap"
+    },
+    {
+      "nome": "Noyz Narcos",
+      "genere": "Rap"
+    }
+  ],
+  "data": {
+    "$date": "2024-09-15T21:00:00.000Z"
+  },
+  "citta": "Roma",
+  "luogo": "Palazzo dello Sport",
+  "posizione": {
+    "type": "Point",
+    "coordinates": [
+      12.466574136246265,
+      41.825304054725734
+    ]
+  },
+  "biglietti": [
+    {
+      "tipo": "vip",
+      "prezzo": 160,
+      "disponibili": 150
+    },
+    {
+      "tipo": "standard",
+      "prezzo": 65,
+      "disponibili": 1000
+    }
+  ]
+}]
